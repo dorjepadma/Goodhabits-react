@@ -1,5 +1,5 @@
-export const postHabit = habit => {
-  return fetch('http://localhost7890/api/v1,goodhabits', {
+export const goodHabit = habit => {
+  return fetch(`${process.env.API_URL}/api/v1,goodhabits`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { goodHabit } from '../services/GoodHabitAPI';
 
 const HabitForming = () => {
   const [title, setTitle] = useState('');
@@ -7,6 +8,10 @@ const HabitForming = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    goodHabit({ title, setDescription, goal })
+      .then(goodHabit => {
+
+      });
   };
 
   return (
