@@ -1,3 +1,7 @@
 import { combineReducers } from 'redux';
-export default combineReducers({});
+import goodHabits from '../reducers/goodHabitReducer';
+
+export default combineReducers({
+  goodHabits
+});
 
