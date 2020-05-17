@@ -1,0 +1,52 @@
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around 10px;
+  background-color: antiquewhite;
+}
+input { 
+   background-color:rgb(243, 164, 45);
+   border:solid 2px rgb(199, 87, 87);
+   width: 49%;
+   font-size:13px;
+   color:#121212;
+   -moz-border-radius:0px;
+   -webkit-border-radius:0px;
+   border-radius:0px;
+   padding-top:5px;
+   padding-bottom:5px;
+   padding-left:5px;
+   padding-right:5px;
+}
+textarea {
+  width: 50%;
+  font-size:14px;
+  color:#333333;
+  background-color:rgb(104, 231, 197);
+  font-weight:normal;
+  padding-top:1px;
+  padding-bottom:1px;
+}
+button {
+  width: 25%;
+  background-color:rgb(34, 161, 230);
+  border:solid 1px #A9A9A9;
+  font-size:16px;
+  color:#000000;
+  font-weight:bold;
+  padding-top:8px;
+  padding-bottom:8px;
+  padding-right:25px;
+  padding-left:25px;
+  -moz-border-radius:9px;
+  -webkit-border-radius:9px;
+  border-radius:9px;
+}
+form.form p.submit {
+  margin-top:0px;
+  margin-bottom:0px;
+  text-align:left;
+}
+form.form p.required label, form.form span.required label {
+   font-weight:bold;
+}

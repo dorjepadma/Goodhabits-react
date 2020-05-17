@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { goodHabit } from '../services/GoodHabitAPI';
+import styles from './Display.css';
 
 const HabitForming = () => {
   const [title, setTitle] = useState('');
@@ -15,11 +16,13 @@ const HabitForming = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type='text' value={title} onChange={({ target }) => setTitle(target.value)} placeHolder='Good Habits' />
-      <textarea value={description} onChange={({ target }) => setDescription(target.value)} placeHolder='What is your new habit'></textarea>
-      <input type='number' value={goal} onChange={({ target }) => setGoal(target.value)} placeHolder='it takes consistency'></input>
+    <form className= {styles.display} onSubmit={handleSubmit}>
+      
+      <input type='text' value={title} onChange={({ target }) => setTitle(target.value)} placeholder='Good Habits' />
+      <textarea value={description} onChange={({ target }) => setDescription(target.value)} placeholder='What is your new habit'></textarea>
+      <input type='number' value={goal} onChange={({ target }) => setGoal(target.value)} placeholder='it takes consistency'></input>
       <button>New Habit</button>
+      
     </form>
   );
 };
