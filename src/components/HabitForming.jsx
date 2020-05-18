@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { postHabit } from '../services/GoodHabitAPI';
+
 import { useDispatch } from 'react-redux';
 import { addGoodHabit } from '../actions/goodHabitActions';
 import styles from './Display.css';
@@ -13,11 +13,8 @@ const HabitForming = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    addGoodHabit({ title, setDescription, goal })
-      .then(habit => {
-        dispatch(addGoodHabit(habit));
-
-      });
+      
+    dispatch(addGoodHabit({ title, description, goal }));
   };
 
   return (

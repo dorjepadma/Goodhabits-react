@@ -1,5 +1,5 @@
 export const goodHabit = habit => {
-  return fetch(`${process.env.API_URL}/api/v1,goodhabits`, {
+  return fetch(`${process.env.API_URL}/api/v1/goodhabits`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -8,4 +8,5 @@ export const goodHabit = habit => {
   })
     .then(res => res.json());
 };
+
 
