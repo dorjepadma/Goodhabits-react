@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import { goodHabit } from '../services/GoodHabitAPI';
+import { postHabit } from '../services/GoodHabitAPI';
+import { useDispatch } from 'react-redux';
+import { addGoodHabit } from '../actions/goodHabitActions';
 import styles from './Display.css';
 
 const HabitForming = () => {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [goal, setGoal] = useState('');
+  const [goal, setGoal] = useState(1);
+
 
   const handleSubmit = event => {
     event.preventDefault();
-    goodHabit({ title, setDescription, goal })
-      .then(goodHabit => {
+    addGoodHabit({ title, setDescription, goal })
+      .then(habit => {
+        dispatch(addGoodHabit(habit));
 
       });
   };

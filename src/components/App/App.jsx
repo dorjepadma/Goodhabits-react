@@ -1,5 +1,5 @@
 import React from 'react';
-import HabitForming from '../HabitForming'
+import HabitForming from '../HabitForming';
 
 export default function App() {
   return <HabitForming/>;
