@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
 
+import { useDispatch } from 'react-redux';
+import { addGoodHabit } from '../actions/goodHabitActions';
+import styles from './Display.css';
+
 const HabitForming = () => {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [goal, setGoal] = useState('');
+  const [goal, setGoal] = useState(1);
+
 
   const handleSubmit = event => {
     event.preventDefault();
+      
+    dispatch(addGoodHabit({ title, description, goal }));
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type='text' value={title} onChange={({ target }) => setTitle(target.value)} placeHolder='Good Habits' />
-      <textarea value={description} onChange={({ target }) => setDescription(target.value)} placeHolder='What is your new habit'></textarea>
-      <input type='number' value={goal} onChange={({ target }) => setGoal(target.value)} placeHolder='it takes consistency'></input>
+    <form className= {styles.display} onSubmit={handleSubmit}>
+      
+      <input type='text' value={title} onChange={({ target }) => setTitle(target.value)} placeholder='Good Habits' />
+      <textarea value={description} onChange={({ target }) => setDescription(target.value)} placeholder='What is your new habit'></textarea>
+      <input type='number' value={goal} onChange={({ target }) => setGoal(target.value)} placeholder='it takes consistency'></input>
       <button>New Habit</button>
+      
     </form>
   );
 };
